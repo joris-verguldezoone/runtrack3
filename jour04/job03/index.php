@@ -27,33 +27,33 @@ HTML. -->
     <label for='nom'>Nom</label>
     <input type='text' id='nom' name='nom'>
 
-    <select name='select' id='select'>
-        <option value='Bug'> Bug  </option>
-        <option value='Dragon'> Dragon  </option>
-        <option value='Fire'> Fire  </option>
-        <option value='Water'> Water  </option>
-        <option value='Flying'> Flying  </option>
-        <option value='Normal'> Normal  </option>
-        <option value='Electric'> Electric  </option>
-        <option value='Grand'> Grand  </option>
-        <option value='Fairy'> Fairy  </option>
-        <option value='Fighting'> Fighting  </option>
-        <option value='Psychic'> Psychic  </option>
-        <option value='Rock'> Rock  </option>
-        <option value='Steel'> Steel  </option>
-        <option value='Ice'> Ice  </option>
-        <option value='Ghost'> Ghost  </option>
-        <option value='Grass'> Grass  </option>
-        <option value='Poison'> Poison  </option>
-    
-    </select>
+    <select id="type" name="type">
+            <option>Selectionnez le type</option>
+            <option value="Grass">Grass</option>
+            <option value="Poison">Poison</option>
+            <option value="Fire">Fire</option>
+            <option value="Flying">Flying</option>
+            <option value="Water">Water</option>
+            <option value="Bug">Bug</option>
+            <option value="Normal">Normal</option>
+            <option value="Electric">Electric</option>
+            <option value="Ground">Ground</option>
+            <option value="Fairy">Fairy</option>
+            <option value="Fighting">Fighting</option>
+            <option value="Psychic">Psychic</option>
+            <option value="Rock">Rock</option>
+            <option value="Steel">Steel</option>
+            <option value="Ice">Ice</option>
+            <option value="Ghost">Ghost</option>
+            <option value="Dragon">Dragon</option>
+        </select>
 
-    <input type='submit' id='submit'>
+    <input type='button' id='envoyer' name='envoyer' value='Rechercher'>
 
 </form>
 
-<div id='ici'> </div>
 
+<div id='demo'> </div>
     <script type="text/javascript" src="script.js"></script>
 
 </body>

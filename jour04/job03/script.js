@@ -5,30 +5,59 @@
 // éléments répondant aux critères sélectionnés en les affichant sur une page
 // HTML. -->
 
-var id = $('id').val()
-var nom = $('nom').val()
-var select = $('select').val()
-console.log(id)
-console.log(nom)
-console.log(select)
+
+
 //appel a la fonction qui va chercher les valeurs
 
-$('#submit').click(function () {
+// var monJson = $.getJSON("pokemon.json", function (json) {
+//     var monJson = json;
+//     // console.log(monJson); // this will show the info it in firebug console
+//     // document.getElementById('ici').append(monJson[id][nom]);
+//     return monJson;
+// });
+
+$('#envoyer').click(function () {
     $.ajax({
         url: 'pokemon.json',
+        type: 'GET',
         dataType: 'json',
 
-    }).done(function () {
-        console.log()
-    })
+        success: function (data) {
 
-})
-// il faut récuperer id name type base
-function jsonValueKey(jayzon, key) {
+            var idSearch = document.getElementById("id");
+            var nomSearch = document.getElementById("nom");
+            var typeSearch = document.getElementById("type");
 
-    var monJson = JSON.parse(jayzon);
 
-    return monJson[key]
-}
-console.log(jsonValueKey(jaizon, 'Dragon'));
-$('body').append(jsonValueKey(jaizon, 'Dragon'))
+            if (idSearch || nomSearch || typeSearch) { // si ces variable ont une valeur alors on les detecte et on va les utiliser , le || permet de facilement selectionner qu'une variable
+
+                for (var i = 0; i < data.length; i++) { // data.lenght -> tous les pokemon a trier
+
+                    var row = $('<p> Nom : ' + data[i].name.french + '<br> Type : ' + data[i].type + '<br>Attaque : ' + data[i].base.Attack + '</p>');
+                    // affichage complet d'un pokemon 
+                    if (idSearch) {
+                        if ($('#id').val() == data[i].id) { // si l'id est le meme que celui chopé dans le for alors on l'affiche avec row
+                            $('#demo').append(row);
+                        }
+                    }
+
+                    if (nomSearch) {
+                        if ($('#nom').val() == data[i].name.french) {
+                            $('#demo').append(row);
+                        }
+                    }
+                    console.log(typeSearch);
+
+                    if (typeSearch) {
+                        if ($('#type').val() == data[i].type) {
+                            $('#demo').append(row);
+                        }
+                    }
+                }
+            }
+        }
+
+    });
+});
+// fonction closure -> fonction dans une variable
+
