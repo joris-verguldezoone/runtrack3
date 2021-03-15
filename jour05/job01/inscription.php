@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION)){
+    session_start();
+}
 if (isset($_POST['register']) || isset($_POST['tamere'])){
     $prenom = htmlspecialchars(trim($_POST['firstName']));
     $nom = htmlspecialchars(trim($_POST['lastName']));
@@ -17,8 +20,22 @@ if (isset($_POST['register']) || isset($_POST['tamere'])){
                     if ($password === $confirmPassword){
                         try{
                             $pdo = new PDO('mysql:host=localhost; dbname=utilisateurs', 'root', '');
-                            echo 'tamkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkker';
-                                
+                        }
+                        catch (PDOException $e){
+                                die("Erreur :" . $e -> getMessage());
+                        }
+                            $statement = $pdo->prepare("SELECT * FROM utilisateurs WHERE nom =:nom");
+
+                            $statement -> execute([
+                    
+                                "nom"=>$nom
+                            ]);
+                    
+                            $resultat = $statement->fetchAll();
+                            
+                            
+                            if(!$resultat){
+
                                 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
                                 $sql = "INSERT INTO utilisateurs (nom,prenom, email, password) VALUES (:nom,:prenom, :email, :password)";
                                 $query = $pdo->prepare($sql);
@@ -28,10 +45,12 @@ if (isset($_POST['register']) || isset($_POST['tamere'])){
                                     "email" => $email,
                                     "password" => $hashedPassword
                                     ]);
-                        }
-                        catch (PDOException $e){
-                            die("Erreur :" . $e -> getMessage());
-                        }
+                            }
+                            else{
+                                echo 'utilisateur existe déjà';
+                            }
+
+                        
                     }
                     else echo $log = "<p>Mot de passe non identique.</p>";
                 }
@@ -70,4 +89,6 @@ echo '
     <button type="button" id="tamere" name="tamere">inscription</button>
     </form>
 ';
+?>
+<script type="text/javascript" src="script.js"></script>
 

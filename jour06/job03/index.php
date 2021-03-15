@@ -15,10 +15,16 @@ medias queries de sorte à respecter le schéma suivant -->
 
 
 <body>
-<section class="section">1</section>
-<section class="section">2</section>
-<section class="section">3</section>
-<section class="section">4</section>
+    <main>
+
+        <article>
+            <section class="section">1</section>
+            <section class="section">2</section>
+            <section class="section">3</section>
+            <section class="section">4</section>
+        </article>
+    </main>
+    <p>sans flex:40%; c'est responsive avec taille fixe mais ça peut en mettre 3 au dessus 1 en dessous</p>
 </body>
     <!-- <script type='text/javascript'>
 

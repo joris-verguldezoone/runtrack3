@@ -1,10 +1,12 @@
-$('#register').click(function () {
+$('#tamere').click(function () {
     console.log('test1');
 
     // console.log($("#firstName").val()),
     $.ajax({
         url: "inscription.php",
         type: "post",
+        // dataType: 'json', // what type of data do we expect back from the server
+        // async: true, // ça marche sans , j'ai juste reload le js dans inscription
         data:
         {
             firstName: $("#firstName").val(),
@@ -12,7 +14,7 @@ $('#register').click(function () {
             email: $("#email").val(),
             password: $("#password").val(),
             confirmPassword: $("#confirmPassword").val(),
-            // register: 1 
+            tamere: 1,
         },
     }).done(function () {
         console.log($("#firstName").val());
@@ -30,17 +32,18 @@ $('#inscription').click(function () {
     $.ajax({
         url: "inscription.php",
         type: "POST",
-        dataType: "html",
-
+         
     }).done(function (event) {
-
+        
         $('#displayForm').append(event);
         $('#link').hide();
         $('#realreturn').show().click(() => {
-
+            
             $('#link').show();
             $('#displayForm').empty();
             $('#realreturn').hide();
+            $('#register').show();
+
         });
     });
 
@@ -48,28 +51,54 @@ $('#inscription').click(function () {
 
 
 /* AFFICHAGE DU FORMULAIRE DE CONNEXION */
-// $.ajax({
-//     url: "connexion.php",
-//     type: "POST",
-//     dataType: "json",
-//     data:
-//     {
-//         email: $("#email").val(),
-//         password: $("#password").val()
-//     },
-//     success: function (data) {
+$.ajax({
+    url: "connexion.php",
+    type: "POST",
+    // dataType: "json",
+    data:
+    {
+        email: $("#email").val(),
+        password: $("#password").val()
+    },
+    success: function (data) {
 
-//         $('#realreturn').hide();
-//         $('#connexion').click(function () {
+        $('#realreturn').hide();
+        $('#connexion').click(function () {
 
-//             $('#displayForm').append(data);
-//             $('#link').hide();
-//             $('#realreturn').show().click(() => {
+            $('#displayForm').append(data);
+            $('#link').hide();
+            $('#realreturn').show().click(() => {
 
-//                 $('#link').show();
-//                 $('#displayForm').empty();
-//                 $('#realreturn').hide();
-//             });
-//         });
-//     }
-// });
+                $('#link').show();
+                $('#displayForm').empty();
+                $('#realreturn').hide();
+            });
+        });
+    }
+});
+
+$('#tonpere').click(function () {
+    console.log('test1');
+
+    // console.log($("#firstName").val()),
+    $.ajax({
+        url: "inscription.php",
+        type: "post",
+        // dataType: 'json', // what type of data do we expect back from the server
+        // async: true, // ça marche sans , j'ai juste reload le js dans inscription
+        data:
+        {
+            email: $("#email").val(),
+            password: $("#password").val(),
+            tonpere: 1,
+        },
+    }).done(function () {
+        
+        console.log($("#email").val());
+        console.log($("#password").val());
+  
+    }).fail(function () {
+        console.log('fail');
+    });
+
+});

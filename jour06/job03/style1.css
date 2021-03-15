@@ -8,25 +8,41 @@ A l’aide des media queries, cette couleur doit évoluer de la façon suivante 
 - #ffffff lorsque la résolution est inférieure à 1280 -->
 <!DOCTYPE html> */
 
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
+article{
+  width:70%;
+  height:70%;
+}
 
 @media screen and (min-width:1600px) {
-  body{
+  article{
     display: flex;
     flex-direction: row;
   }
 }
   @media screen and (min-width:768px) and (max-width: 1599px) {
-    body{
+    article{
       display: flex;
       flex-wrap: wrap;
       
     }
+    article > .section{
+      flex: 40%;
+
+        flex-direction: wrap;
+        /* height:50%; */
+    }
   }
   @media screen and (max-width: 767px) {
-    body{
+    article{
       display: flex;
       flex-direction: column;
+      
     }
     
   }
@@ -35,11 +51,13 @@ A l’aide des media queries, cette couleur doit évoluer de la façon suivante 
   .section{
     background-color: #88c1d0;
     align-items: center;
-    width:30vh;
-    height:30vh;
+    width:200px;
+    height:200px;
     border: 1px black solid;
     border-radius: 1em;
     text-align: center;
     font-size: 3em;
     font-weight: bold;
+    margin:20px;
+    box-shadow: 3px 3px 3px black;
   }
