@@ -35,14 +35,14 @@ function drop(ev) {
     var parent = $("#rangees");
     var child = parent.children();
     var solution = ['image_1', 'image_2', 'image_3', 'image_4', 'image_5', 'image_6'];
-    console.log(child[0].id);
     for (i = 0; child[i] && child[i].id == solution[i]; i++); // 
+    console.log(child[0].id);
     console.log(i);
     if (child.length == 6 && i == 6) {
-        console.log('gagn"');
+        console.log('gagné');
     }
     else if (child.length == 6 && i != 6)
-        console.log("error");
+        console.log("perdu");
 
 
 
