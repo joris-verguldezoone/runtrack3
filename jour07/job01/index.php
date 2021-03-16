@@ -38,7 +38,7 @@
     </header>
 
     <main>
-    <h1  class="fw-lighter text-center" >LaPlateforme_</h1>
+    <h1  class="fw-lighter text-center" style="margin-bottom:3%;" >LaPlateforme_</h1>
     <section class="d-flex flex-row justify-content-around">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="papillon.jpg" alt="Card image cap">
@@ -48,7 +48,7 @@
                 <a href="#" class="btn btn-primary">Commandez votre propre papillon</a>
             </div>
         </div>
-<article class='alert alert-secondary rounded w-50 p-3 .bg-light'>
+<article class='alert alert-secondary rounded w-75 p-3 .bg-light '>
 <h1>Bonjour, monde!</h1>
 <p>Il existe plusieurs vison du terme:</p>
 <p>le monde est la matiere , l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison </p>
@@ -86,9 +86,15 @@
 </div>
 
     </section>
-    <p>Installation de AI 9000</p>
-<div class="  progress m-5 ">
-  <div class="  progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <section class="container d-flex flex-column justify-content-center w-50">
+                        <!-- Progress Bar -->
+                        <p class="fw-bolder mb-0 mt-4" style="margin-left: 76.6%;">Installation de AI 9000</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </section>
+    
 </div>
 <div class="d-flex flex-row justify-content-around">
 <section class="container d-flex flex-column w-25 p-3">

@@ -36,5 +36,5 @@ function activateCheats() {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundColor = "#88C1D0";
 
-    alert("Code de triche activé ! Ps : Monte le son a fond !! <3");
+    alert("Code de triche activé !");
 }
