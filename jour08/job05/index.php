@@ -91,7 +91,7 @@ de différentes tailles.-->
           </p>
         </div>
         <div class="card-action">
-          <a href="https://www.youtube.com/playlist?list=PL1hmYleVaXpC4mDHDFZP0Y3jMzQlwDuES">Playlist</a>
+          <a href="https://www.youtube.com/playlist?list=PL1hmYleVaXpC4mDHDFZP0Y3jMzQlwDuES" target="_blank">Playlist</a>
         </div>
       </div>
     </div>
@@ -110,7 +110,7 @@ de différentes tailles.-->
           </p>
         </div>
         <div class="card-action">
-          <a href="https://www.youtube.com/playlist?list=PL1hmYleVaXpC5W2DXeW0EhrmC7FSipUK5">Playlist</a>
+          <a href="https://www.youtube.com/playlist?list=PL1hmYleVaXpC5W2DXeW0EhrmC7FSipUK5" target="_blank">Playlist</a>
         </div>
       </div>
     </div>
@@ -128,7 +128,7 @@ de différentes tailles.-->
           </p>
         </div>
         <div class="card-action">
-          <a href="https://www.youtube.com/playlist?list=PL1hmYleVaXpBk2WVEsuITCZhLldK7RrzS">Playlist</a>
+          <a href="https://www.youtube.com/playlist?list=PL1hmYleVaXpBk2WVEsuITCZhLldK7RrzS" target="_blank">Playlist</a>
         </div>
       </div>
     </div>
