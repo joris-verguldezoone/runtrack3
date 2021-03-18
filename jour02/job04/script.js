@@ -11,7 +11,14 @@ function keylogger(e) {
     } else if (e.which) { // Netscape/Firefox/Opera  Which va lire ce qui est pressé sur le clavier , a priori which ne sert qu'à ça                
         keynum = e.which; // si l'event a détecté une touche alors on va lui attribuer le numéro de touche keyCode et l'attribuer a keynum 
     }
-    document.getElementById('textarea').textContent += String.fromCharCode(keynum); // selection de l'id, qu'on va stocker dans .textContent et formater 
+    document.getElementById('textarea').textContent += String.fromCharCode(keynum);
+    $('#textarea').focus(function () {
+
+        document.getElementById('textarea').textContent
+    }).done(function () {
+
+    });
+    // selection de l'id, qu'on va stocker dans .textContent et formater 
     // a chaque nouvelle valeur entrée, on additionne la précédente
     // if (document.event.focus) {
     //     console.log("mabite");
